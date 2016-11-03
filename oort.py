@@ -115,6 +115,41 @@ def replaceMdByPdf(file):
     return (os.path.splitext(file)[0] + ".pdf")
 
 
+def combinePdfs(SourceFolder,DestinationFolder):
+    files = [file for file in os.listdir(SourceFolder) if (os.path.splitext(file)[1] == ".pdf") ]
+
+    if os.path.exists(DestinationFolder):
+        shutil.rmtree(DestinationFolder)
+
+    os.makedirs(DestinationFolder)
+
+    merger = PyPDF2.PdfFileMerger()
+
+    for filename in files:
+        print("combining " + filename)
+        merger.append(PyPDF2.PdfFileReader(open(os.path.join(SourceFolder,filename),'rb')))
+        print("combined " + filename)
+
+    merger.write(os.path.join(DestinationFolder,"combined.pdf"))
+
+
+
+def batchPdfConversion(SourceFolder,DestinationFolder):
+    files = [file for file in os.listdir(SourceFolder) if (os.path.splitext(file)[1] == ".md" and os.path.splitext(file)[0] != "index")]
+
+    if os.path.exists(DestinationFolder):
+        shutil.rmtree(DestinationFolder)
+
+    os.makedirs(DestinationFolder)
+
+    for file in files:
+        print("starting conversion: " + file + " to pdf...")
+        command = ['pandoc',"--variable","fontsize=16pt",os.path.join(SourceFolder,file),'--latex-engine=xelatex','--template=me.latex','-o',os.path.join(DestinationFolder,replaceMdByPdf(file))]
+        subprocess.run(command)
+        print("conversion completed: " + file + " to pdf...")
+
+
+
 ## STEPS
 
 
@@ -155,7 +190,7 @@ print("==========WEBSITE BUILT SUCCESSFULLY============")
 
 
 
-# todo 1. integrate pdf,epub,doc,beamer,html, rtf etc. 2. me.latex. 3. any notes versions
+# todo 1. integrate pdf,epub,doc,beamer,html, rtf etc. 2. me.latex path change. 3. any notes versions
 
 
 
