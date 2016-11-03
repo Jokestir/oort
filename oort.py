@@ -155,6 +155,7 @@ print("==========WEBSITE BUILT SUCCESSFULLY============")
 
 
 
+# todo 1. integrate pdf,epub,doc,beamer,html, rtf etc. 2. me.latex. 3. any notes versions
 
 
 
