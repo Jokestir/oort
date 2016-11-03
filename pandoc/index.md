@@ -54,10 +54,4 @@
 
 * [133 interview questions ](http://javarevisited.blogspot.in/2015/10/133-java-interview-questions-answers-from-last-5-years.html)
 
-* [Awesome Interview questions](https://github.com/MaximAbramchuck/awesome-interview-questions#java)
-
-* [Interview Bit](https://www.interviewbit.com/)
-
-* ​
-
   ​

@@ -1,0 +1,7 @@
+* ####[Resources](./00-resources.html)
+* ####[Variables](./04-Variables.html)
+* ####[Exceptions](./11-Exceptions.html)
+* ####[Compilation failures](./20-Compilation failures.html)
+* ####[Faqs](./21-FAQs.html)
+* ####[Generic programming problems](./22-Generic Programming problems.html)
+* ####[Cs fundamentals](./23-CS fundamentals.html)
