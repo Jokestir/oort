@@ -2,7 +2,7 @@
 
 
 
-[TL;DR](../assets/tl_dr_design_patterns.png)
+[TL;DR](./assets/tl_dr_design_patterns.png)
 
 
 
@@ -12,7 +12,10 @@ Design patterns are `best practise strategies` to solve a `recurring problem`.
 
 Whenever a problem arises, there are two options.
 
-![Type of Problem](../assets/problem_design_patterns.png){:class="img-responsive"}
+![Design Patters](https://jokestir.github.io/assets/tl_dr_design_patterns.png)
+
+* If the problem is specific, invent a solution
+* If the problem is generic and repeating, use design patterns
 
 Questions to be asked when studying a design pattern
 
