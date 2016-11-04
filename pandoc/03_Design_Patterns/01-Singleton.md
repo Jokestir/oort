@@ -9,20 +9,20 @@
 >  1. Single element enum.
 >  2. Private constructor and static factory method.
 
-### 1. Problem: Design a class so that only **one** instance of it exists.
+## 1. Problem: Design a class so that only **one** instance of it exists.
 
 The class whose only one instance is available all the time is called a singleton class.
 
 Example: Earth, Mars etc.
 
 
-### 2. Design
+## 2. Design
 
 There are two designs to achieve singularity.
 
 
 
-#### Design  1 - Have a single element enum
+### Design  1 - Have a single element enum
 
 This method is reflection safe.
 
@@ -42,7 +42,7 @@ public enum Earth {
 
 
 
-#### Design 2
+### Design 2
 
 This method is susceptible to reflection attacks.
 
@@ -77,14 +77,14 @@ public class Earth{
 
 
 
-### 3. Real Time Use
+## 3. Real Time Use
 
 > Example : Logger class to log errors and events. There should only be one per system. Hence singleton.
 
 > Another Example : Manager type classes like WiFiManager. Or Controller.
 
 
-### 4. Tester Class Code
+## 4. Tester Class Code
 
 
 
