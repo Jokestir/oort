@@ -251,7 +251,7 @@ def batchPdfConversion(SourceFolder,DestinationFolder):
 
 
 
-def buildwebsite():
+def buildwebsite(pdfTrue):
     # get topics
     print("getting topics...")
     global folder_list
@@ -283,7 +283,8 @@ def buildwebsite():
 
 
     # build pdfs
-    batchPdfConversion(os.getcwd(),os.path.join(os.getcwd(),"assets","print"))
+    if(pdfTrue):
+        batchPdfConversion(os.getcwd(),os.path.join(os.getcwd(),"assets","print"))
 
     # delete all markdown files
     print("deleting all md files from destination path...")
@@ -295,7 +296,6 @@ def buildwebsite():
 
 
     # todo 1. integrate pdf,epub,doc,beamer,html, rtf etc. 2. any notes versions
-
 
 
 
@@ -313,8 +313,14 @@ if __name__ == "__main__":
 
 
     if arg == "buildwebsite":
+        if (len(sys.argv) == 3):
+            if (sys.argv[2] == "pdf"):
+                pdfTrue = True
+        else:
+            pdfTrue = False
+
         print("building website...")
-        buildwebsite()
+        buildwebsite(pdfTrue)
 
     elif arg == "slideshow":
         print("preparing beamer slideshow...")
